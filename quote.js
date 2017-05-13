@@ -6,7 +6,7 @@ var backC = document.getElementById('backgroundC');
 var name = document.getElementById('name');
 var tweet = document.getElementById('tweet');
 function load(){
-  http.open('GET', "http://quotes.stormconsultancy.co.uk/random.json", true);
+  http.open('GET', "https://crossorigin/http://quotes.stormconsultancy.co.uk/random.json", true);
   http.send();
 }
 
