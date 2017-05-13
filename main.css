@@ -1,0 +1,57 @@
+html,body,div,button,a {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+#backgroundC{
+  background-color: #2ecc71;
+}
+.container{
+  display: flex;
+  display: -webkit-flex; /* Safari */
+  justify-content: center;
+  align-items: center;
+}
+.quote-box{
+  width: auto;
+}
+.item{
+  margin-top: 8em;
+  background-color: white;
+  width: 40em;
+  height: auto;
+  text-align: center;
+}
+blockquote p{
+  padding-top: 2em;
+  font-size: 1.7em;
+}
+.item p:nth-child(2){
+  font-size: 1.2em;
+}
+#name{
+  margin:auto;
+  margin-left: 22em;
+}
+button{
+  font-size: 1.5em;
+  border-radius: .1em;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+#tweet-button{
+  margin: auto;
+  margin-right: 1em;
+  width: 2em;
+  height: 2em;
+  background-color: #2980b9;
+  color: white;
+}
+
+#quote-button{
+  width: 8em;
+  height: 2em;
+  background-color: #2ecc71;
+  color: white;
+
+}
