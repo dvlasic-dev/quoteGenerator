@@ -6,18 +6,18 @@ var backC = document.getElementById('backgroundC');
 var name = document.getElementById('name');
 var tweet = document.getElementById('tweet');
 function load(){
-  http.open('GET', "https://crossorigin/https://quotes.stormconsultancy.co.uk/random.json", true);
+  http.open('GET', "http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1", true);
   http.send();
 }
 
 http.onload = function(){
   if(http.status >= 200 && http.status  < 400){
     var data = JSON.parse(http.response);
-    var author = data.author;
-    var quote = data.quote;
+    var author = data[0].title;
+    var quote = data[0].content;
     quoteText.innerHTML = quote;
     name.innerHTML ="- " + author;
-
+    console.log(data[0]);
     tweet.onclick = function(){
       tweet.setAttribute('href', 'https://twitter.com/intent/tweet?hashtags=quotes,programming&related=freecodecamp&text='
       + encodeURIComponent('"' + quote + '" ' + '- ' + author));
@@ -30,7 +30,7 @@ http.onload = function(){
 
 getQuote.onclick = function(event){
   load();
-
+//Change background and button colors
   var colors = ["#FDD692", "#EC7357", "#1F5673", "#463730", "#B9B8D3", "#754668", "#4DAA57",
   "#BA1F33", "#1C1C54", "#5EFC8D", "#93BEDF", "#1D0E2A", "#6D5A72", "#C82647", "#E3000E", "#0E142A",
    "#4D1A19", "#B03B98", "#3DB864", "#42BF40", "#0E2A14", "#B96ACD",

@@ -23,8 +23,8 @@ html,body,div,button,a {
   text-align: center;
 }
 blockquote p{
-  padding-top: 2em;
-  font-size: 1.7em;
+  padding-top: 1em;
+  font-size: 1.3em;
 }
 .item p:nth-child(2){
   font-size: 1.2em;
