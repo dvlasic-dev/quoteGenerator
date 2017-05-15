@@ -6,18 +6,18 @@ var backC = document.getElementById('backgroundC');
 var name = document.getElementById('name');
 var tweet = document.getElementById('tweet');
 function load(){
-  http.open('GET', "http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1", true);
+  http.open('GET', "http://www.quotzzy.co/api/quote", true);
   http.send();
 }
 
 http.onload = function(){
   if(http.status >= 200 && http.status  < 400){
-    var data = JSON.parse(http.response);
-    var author = data[0].title;
-    var quote = data[0].content;
+    var data = JSON.parse (http.response);
+    var author = data.author['name']; //access to objects key 'name', of object author 
+    var quote = data.text;
     quoteText.innerHTML = quote;
     name.innerHTML ="- " + author;
-    console.log(data[0]);
+    console.log(data);
     tweet.onclick = function(){
       tweet.setAttribute('href', 'https://twitter.com/intent/tweet?hashtags=quotes,programming&related=freecodecamp&text='
       + encodeURIComponent('"' + quote + '" ' + '- ' + author));
